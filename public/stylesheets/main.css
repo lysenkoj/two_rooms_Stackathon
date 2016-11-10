@@ -24,6 +24,10 @@ body {
   height: 100vh;
   width: 100vw; }
 
+.filler {
+  width: 100vw;
+  height: 30vh; }
+
 .roundContainer {
   display: flex;
   flex-direction: row;
@@ -89,3 +93,22 @@ input:checked + .slider:before {
   -webkit-transform: translateX(45vw);
   -ms-transform: translateX(45vw);
   transform: translateX(45vw); }
+
+.RevealButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 20vh;
+  width: 100vw; }
+
+.RevealButton {
+  height: 100%;
+  width: 20vh; }
+
+.tempBtn {
+  height: 20vh;
+  width: 20vh;
+  background: blue;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }

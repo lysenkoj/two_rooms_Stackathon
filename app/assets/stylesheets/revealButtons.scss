@@ -1,0 +1,21 @@
+.RevealButtonsContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 20vh;
+    width: 100vw;
+}
+
+.RevealButton{
+    height: 100%;
+    width: 20vh;
+}
+
+.tempBtn{
+    height: 20vh;
+    width: 20vh;
+     background: blue;
+     -moz-border-radius: 50%;
+   	-webkit-border-radius: 50%;
+   	border-radius: 50%;
+}
