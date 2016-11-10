@@ -6,6 +6,7 @@ import {connect, Provider} from 'react-redux'
 
 import store from './store';
 import Timer from './components/Timer';
+import RoundTracker from './components/RoundTracker';
 
 
 
