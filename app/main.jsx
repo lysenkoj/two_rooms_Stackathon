@@ -5,15 +5,15 @@ import {render} from 'react-dom'
 import {connect, Provider} from 'react-redux'
 
 import store from './store';
-import Timer from './components/Timer';
-import MainWrapper from './components/MainWrapper';
-import RoundTracker from './components/RoundTracker';
+
+import MainNonLeaderScreen from './components/mainNonLeaderScreen';
+
 
 
 render (
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={MainWrapper}>
+      <Route path="/" component={MainNonLeaderScreen}>
 
       </Route>
     </Router>
