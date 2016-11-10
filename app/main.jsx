@@ -5,17 +5,16 @@ import {render} from 'react-dom'
 import {connect, Provider} from 'react-redux'
 
 import store from './store';
-import Timer from './components/Timer';
-import RoundTracker from './components/RoundTracker';
+
+import MainNonLeaderScreen from './components/mainNonLeaderScreen';
 
 
 
 render (
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={Timer}>
-        <IndexRedirect to="/timer" />
-        <Route path="/timer" component={Timer} />
+      <Route path="/" component={MainNonLeaderScreen}>
+
       </Route>
     </Router>
   </Provider>,

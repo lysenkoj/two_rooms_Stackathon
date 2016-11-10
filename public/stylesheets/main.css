@@ -9,12 +9,24 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 20vh;
-  width: 100vw; }
+  width: 100vw;
+  margin-bottom: 2vh; }
 
 .timebox {
   height: 100%;
   width: 25%;
   border: 1px solid black; }
+
+.outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw; }
+
+.filler {
+  width: 100vw;
+  height: 30vh; }
 
 .roundContainer {
   display: flex;
@@ -22,7 +34,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 5vh;
-  width: 100vw; }
+  width: 100vw;
+  margin-bottom: 2vh; }
 
 .round {
   height: 100%;
@@ -32,3 +45,70 @@ body {
   -webkit-border-radius: 50px;
   border-radius: 50px;
   margin: 0px 1vw 0px 1vw; }
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 15vh; }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90vw;
+  height: 10vh; }
+
+.switch input {
+  display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 10vh;
+  width: 45vw;
+  background-color: yellow;
+  -webkit-transition: .4s;
+  transition: .4s; }
+
+input:checked + .slider {
+  background-color: #2196F3; }
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3; }
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(45vw);
+  -ms-transform: translateX(45vw);
+  transform: translateX(45vw); }
+
+.RevealButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 20vh;
+  width: 100vw; }
+
+.RevealButton {
+  height: 100%;
+  width: 20vh; }
+
+.tempBtn {
+  height: 20vh;
+  width: 20vh;
+  background: blue;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%; }
