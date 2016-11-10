@@ -1,0 +1,14 @@
+.timer{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+height: 20vh;
+width: 100vw;
+}
+
+.timebox{
+ height: 100%;
+ width: 25%;
+ border: 1px solid black;
+}
