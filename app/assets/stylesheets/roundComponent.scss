@@ -1,0 +1,22 @@
+$active: green;
+$dead: red;
+
+
+.roundContainer{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+height: 5vh;
+width: 100vw;
+}
+
+.round{
+ height: 100%;
+ width: 5vh;
+  background: $active;
+  -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+ margin: 0px 1vw 0px 1vw;
+}

@@ -16,6 +16,7 @@ body {
   width: 25%;
   border: 1px solid black; }
 
+
 .outer {
   display: flex;
   flex-direction: row;
@@ -28,3 +29,20 @@ body {
   height: 100%;
   width: 25%;
   border: 1px solid red; }
+
+.roundContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  width: 100vw; }
+
+.round {
+  height: 100%;
+  width: 5vh;
+  background: green;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  margin: 0px 1vw 0px 1vw; }
