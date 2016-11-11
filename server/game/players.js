@@ -1,9 +1,8 @@
-'use-strict'
+const usersFromLobby = [ "Jordan", "Matt", "Kenneth", "Jackson", "Franklyn", "Katy" ]
 
-const usersFromLobby = require('../gameLobby') //this will be array
 const { fullRolesArray, testingRolesArray } = require('./roles.js')
 
-export const currentPlayers = []
+const currentPlayers = []
 
 var swappedArray = testingRolesArray;
 var theLength = swappedArray.length - 1;
@@ -38,3 +37,7 @@ usersFromLobby.forEach((user, index) =>{
 
 //lobby --> will receive array of userNames to be assigned to players
 //create players initialize game function
+
+module.exports = {
+    currentPlayers: currentPlayers
+}
