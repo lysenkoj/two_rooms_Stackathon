@@ -1,6 +1,14 @@
 //depending on how many game players, export randomized sub array of roles
 
-export const roles = [
+export const testingRolesArray = [
+    {name: 'President', role: 'You are a primary character. Blue Team wins if you do not gain the “dead” condition.', color: 'blue', team: 'blue'},
+    {name: 'Bomber', role: 'You are a primary character. Everyone in the same room as you at the end of the game gains the “dead” condition. The Red Team wins if the President gains the “dead” condition.', note: 'if the Bomber receives the “dead” condition before the end of the game then the Bomber does not provide the “dead” condition to everyone in the same room.', color: 'red', team: 'red'},
+    {name: 'Blue Team', role: 'You are on the Blue Team. You win If the President does not gain the “dead” condition.', note: 'Any character card that has the star icon on it is considered to be on the Blue Team.', color: 'blue', team: 'blue'},
+    {name: 'Blue Team', role: 'You are on the Blue Team. You win If the President does not gain the “dead” condition.', note: 'Any character card that has the star icon on it is considered to be on the Blue Team.', color: 'blue', team: 'blue'},
+    {name: 'Red Team', role: 'You are on Red Team. You win if the President gains the “dead” condition.', note: 'Any character card that has the bomb icon on it is considered to be on the Red Team.', color: 'red', team: 'red'},
+    {name: 'Red Team', role: 'You are on Red Team. You win if the President gains the “dead” condition.', note: 'Any character card that has the bomb icon on it is considered to be on the Red Team.', color: 'red', team: 'red'}
+]
+export const fullRolesArray = [
   {name: 'Agent', role: 'You have the AGENT power: once per round, you may privately reveal your card to a player and force that player to card share with you. You must verbally say to the target player, “I’m using my AGENT power. You must card share with me.”', note: 'The AGENT power works even on characters that normally can’t card share (e.g. Shy Guy).', color: 'blue', team: 'blue'},
   {name: 'Agent', role: 'You have the AGENT power: once per round, you may privately reveal your card to a player and force that player to card share with you. You must verbally say to the target player, “I’m using my AGENT power. You must card share with me.”', note: 'The AGENT power works even on characters that normally can’t card share (e.g. Shy Guy).', color: 'red', team: 'red'},
   {name: 'Agoraphobe', role: 'You win as long as you never leave your initial room.', color:'grey', team: 'none'},
