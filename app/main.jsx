@@ -1,6 +1,6 @@
 'use strict'
 import React from 'react'
-import {Router, Route, IndexRedirect, browserHistory} from 'react-router'
+import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 import {render} from 'react-dom'
 import {connect, Provider} from 'react-redux'
 
@@ -19,8 +19,15 @@ import Vote from './components/Vote';
 render (
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={MainInbetweenLeader}>
-      </Route>
+        <Route path="/" component={MainLeaderScreen} />
+            <Route path="MainNonLeader" component={MainNonLeaderScreen} />
+            <Route path="MainLeader" component={MainLeaderScreen} />
+            <Route path="ColorReveal" component={ColorReveal} />
+            <Route path="RoleReveal" component={RoleReveal} />
+            <Route path="MainInbetweenNonLeader" component={MainInbetweenNonLeader} />
+            <Route path="MainInbetweenLeader" component={MainInbetweenLeader} />
+            <Route path="Vote" component={Vote}/>
+
     </Router>
   </Provider>,
   document.getElementById('main')
