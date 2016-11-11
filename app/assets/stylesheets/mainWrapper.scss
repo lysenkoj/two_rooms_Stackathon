@@ -7,6 +7,22 @@ width: 100vw;
 }
 
 .filler{
-    width: 100vw;
-    height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 2;
+  align-items: flex-end;
+  width: 100vw;
+}
+
+#description {
+  align-items: center;
+}
+
+#roomAssign {
+  align-items: center;
+}
+
+#startRound{
+  align-items: center;
 }
