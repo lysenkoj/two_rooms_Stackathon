@@ -140,3 +140,18 @@ input:checked + .slider:before {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+
+.red {
+  background: url(redColorReveal.svg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.qContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  width: 0;
+  height: 0; }

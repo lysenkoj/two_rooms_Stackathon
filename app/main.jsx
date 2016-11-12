@@ -8,11 +8,14 @@ import store from './store';
 
 import MainNonLeaderScreen from './components/mainNonLeaderScreen';
 import MainLeaderScreen from './components/mainLeaderScreen';
-import ColorReveal from './components/ColorReveal';
-import RoleReveal from './components/RoleReveal';
+import ColorRevealBlue from './components/ColorRevealBlue';
+import ColorRevealRed from './components/ColorRevealRed';
+import RoleRevealBlue from './components/RoleRevealBlue';
+import RoleRevealRed from './components/RoleRevealRed';
 import MainInbetweenNonLeader from './components/mainInbetweenNonLeader';
 import MainInbetweenLeader from './components/mainInbetweenLeader';
 import Vote from './components/Vote';
+import StartScreen from './components/StartScreen';
 
 
 
@@ -22,11 +25,14 @@ render (
         <Route path="/" component={MainLeaderScreen} />
             <Route path="MainNonLeader" component={MainNonLeaderScreen} />
             <Route path="MainLeader" component={MainLeaderScreen} />
-            <Route path="ColorReveal" component={ColorReveal} />
-            <Route path="RoleReveal" component={RoleReveal} />
+            <Route path="ColorRevealBlue" component={ColorRevealBlue} />
+            <Route path="ColorRevealRed" component={ColorRevealRed} />
+            <Route path="RoleRevealBlue" component={RoleRevealBlue} />
+            <Route path="RoleRevealRed" component={RoleRevealRed} />
             <Route path="MainInbetweenNonLeader" component={MainInbetweenNonLeader} />
             <Route path="MainInbetweenLeader" component={MainInbetweenLeader} />
             <Route path="Vote" component={Vote}/>
+            <Route path="Start" component={StartScreen}/>
 
     </Router>
   </Provider>,
