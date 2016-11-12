@@ -3,11 +3,11 @@ import RevealButtons from './RevealButtons';
 import Timer from './Timer';
 
 
-export default class RoleReveal extends Component {
+export default class RoleRevealRed extends Component {
 
   render() {
     return (
-      <div className='outer'>
+      <div className='outer red'>
         <Timer />
         <div id="description" className="filler">
           <h3>BOMBER</h3>

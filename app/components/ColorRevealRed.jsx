@@ -3,19 +3,19 @@ import RevealButtons from './RevealButtons';
 import Timer from './Timer';
 
 
-export default class ColorReveal extends Component {
+export default class ColorRevealRed extends Component {
   constructor(props){
     super(props)
     this.state = {
       player:{
-        color: "blue"
+        color: "red"
       }
     }
   }
 
   render() {
     return (
-      <div className='outer blue'>
+      <div className='outer red'>
         <Timer />
         <div className="filler"/>
         <RevealButtons/>
