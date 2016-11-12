@@ -23,6 +23,8 @@ const gameLogic = {
   countdown: null,
   roundToggle: true,
   prepToggle: true,
+  // leader check will turn to true when leader hits start round
+  leaderStart: false,
   prepTimer: {
     timeID: null,
     time: 20,
@@ -31,7 +33,7 @@ const gameLogic = {
       if(this.timeID === null){
         this.timeID = setInterval(function() {
           timerTick();
-        }, 1000);
+        }, 10);
       } else {
         this.stop();
       }
@@ -42,6 +44,7 @@ const gameLogic = {
       if(this.time === 0){
         gameLogic.prepToggle = false;
         this.stop();
+        gameLogic.roundTimer.start();
       }
     },
     stop: function() {
@@ -60,7 +63,7 @@ const gameLogic = {
       if(this.timeID === null){
         this.timeID = setInterval(function() {
           timerTick();
-        }, 1000);
+        }, 10);
       } else {
         this.stop();
       }
@@ -71,6 +74,35 @@ const gameLogic = {
       if(gameLogic.countdown === 0){
         gameLogic.roundToggle = false;
         this.stop();
+        gameLogic.round--;
+        if(gameLogic.round > 0){
+          // use a socket callback if leaderStart true
+          // client will click start and that will be sent to server via socket
+          // run timer
+          gameLogic.roundTimer.start();
+        }else{
+          let presidentRoom;
+          let bomberRoom;
+          Rooms.roomA.forEach(player => {
+            if(player.role.name === "President"){
+              presidentRoom = "A";
+            }else{
+              presidentRoom = "B";
+            }
+          })
+          Rooms.roomA.forEach(player => {
+            if(player.role.name === "Bomber"){
+              bomberRoom = "A";
+            }else{
+              bomberRoom = "B";
+            }
+          })
+          if(presidentRoom !== bomberRoom){
+            console.log("BLUE TEAM WINS!");
+          }else{
+            console.log("RED TEAM WINS!");
+          }
+        }
       }
     },
     stop: function() {
@@ -78,9 +110,10 @@ const gameLogic = {
       this.timeID = null;
     }
   },
-
   engine: function() {
     Rooms.sortPlayers();
+    gameLogic.prepTimer.start();
+
   }
 }
 
@@ -88,7 +121,7 @@ const gameLogic = {
 
 
 
-
+gameLogic.engine();
 
 
 
