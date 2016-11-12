@@ -15,6 +15,7 @@ import RoleRevealRed from './components/RoleRevealRed';
 import MainInbetweenNonLeader from './components/mainInbetweenNonLeader';
 import MainInbetweenLeader from './components/mainInbetweenLeader';
 import Vote from './components/Vote';
+import StartScreen from './components/StartScreen';
 
 
 
@@ -31,6 +32,7 @@ render (
             <Route path="MainInbetweenNonLeader" component={MainInbetweenNonLeader} />
             <Route path="MainInbetweenLeader" component={MainInbetweenLeader} />
             <Route path="Vote" component={Vote}/>
+            <Route path="Start" component={StartScreen}/>
 
     </Router>
   </Provider>,

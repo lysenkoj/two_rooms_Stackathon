@@ -11,14 +11,14 @@ export default class RevealButtons extends Component {
     this.revealColor = this.revealColor.bind(this)
     this.roleReveal = this.roleReveal.bind(this)
     this.endReveal = this.endReveal.bind(this)
-    this.ColorRevealMarks = this.questionMarks.bind(this)
+    this.ColorRevealMarks = this.ColorRevealMarks.bind(this)
     this.pauseElement = this.pauseElement.bind(this)
 
   }
 
   revealColor(){
     this.state.colorReveal = true;
-    this.questionMarks()
+    this.ColorRevealMarks()
   }
 
   roleReveal(){
@@ -28,7 +28,7 @@ export default class RevealButtons extends Component {
   endReveal(){
     this.state.revealColor = false;
     this.state.revealRole = false;
-    this.pauseElement()
+    this.state.animtions=[]
   }
 
   pauseElement() {
@@ -72,7 +72,10 @@ ColorRevealMarks() {
         <button onMouseDown={this.roleReveal} onMouseUp={this.endReveal} type="button" className="RevealButton" id="btn2" >
             <img className="revealButton" src="stylesheets/button.svg" />
         </button>
-        <QuestionMarks/>
+        {
+          this.state.revealColor ?
+          <QuestionMarks/>: null
+        }
       </div>
     );
   }
