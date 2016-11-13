@@ -24,6 +24,12 @@ io.on('connection', function (socket) {
   socket.on('startGame', function(){
       gameLogic.engine()
   })
+
+  socket.on('nextRound', function(){
+    gameLogic.roundTimer.start();
+  })
+
+
     socket.on('disconnect', function(){
         console.log("Jack, I'll never let go...");
     })
@@ -148,36 +154,6 @@ const gameLogic = {
         gameLogic.roundToggle = false;
         this.stop();
         gameLogic.round--;
-        if(gameLogic.round > 0){
-          io.sockets.on('connection', function(socket){
-            socket.on('nextRound', function(){
-              console.log("HELLO!!!!!!!!")
-              gameLogic.roundTimer.start();
-              })
-          })
-        }else{
-          let presidentRoom;
-          let bomberRoom;
-          Rooms.roomA.forEach(player => {
-            if(player.role.name === "President"){
-              presidentRoom = "A";
-            }else{
-              presidentRoom = "B";
-            }
-          })
-          Rooms.roomA.forEach(player => {
-            if(player.role.name === "Bomber"){
-              bomberRoom = "A";
-            }else{
-              bomberRoom = "B";
-            }
-          })
-          if(presidentRoom !== bomberRoom){
-            console.log("BLUE TEAM WINS!");
-          }else{
-            console.log("RED TEAM WINS!");
-          }
-        }
       }
     },
     stop: function() {

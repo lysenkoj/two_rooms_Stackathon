@@ -11,9 +11,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     startingRound: (game, socket) => {
       dispatch(startRound(game))
-      console.log("socket", socket)
       socket.emit('nextRound',()=>{
-        console.log("EMIT!!")
       })
     }
   }
