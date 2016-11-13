@@ -11,6 +11,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     creatingLobby: (game) => {
       dispatch(createLobby(game))
+      const socket = io()
+      socket.emit('startGame', function () {
+      });
     }
   }
 }

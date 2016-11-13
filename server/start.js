@@ -20,9 +20,6 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
-  socket.on('leaderToggle', function(){
-      console.log("RECEIVED DATA!")
-  })
   socket.on('startGame', function(){
       gameLogic.engine()
   })
@@ -151,12 +148,9 @@ const gameLogic = {
         this.stop();
         gameLogic.round--;
         if(gameLogic.round > 0){
-          console.log(io)
-          io.sockets.on('connection', function(socket){
-            socket.on('leaderToggle', function(){
+            io.sockets.on('nextRound', function(){
               gameLogic.roundTimer.start();
               })
-          })
         }else{
           let presidentRoom;
           let bomberRoom;

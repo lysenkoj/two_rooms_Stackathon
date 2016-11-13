@@ -40,15 +40,17 @@ export const gameReducer = (state = gameInitialState, action) => {
     case CREATE_GAME:
       return Object.assign({}, state, {round: action.game.round})
     case CREATE_LOBBY:
-      return Object.assign({}, state, {activeLobby: !action.game.activeLobby} )
+      console.log("CREATE LOBBY",action.game)
+      return Object.assign({}, state, {activeLobby: action.game.activeLobby} )
     case START_GAME:
-      return Object.assign({}, state, {gameIsPlaying: !action.game.gameIsPlaying})
+      return Object.assign({}, state, {gameIsPlaying: action.game.gameIsPlaying})
     case START_NEXT_ROUND:
-      return Object.assign({}, state, {roundIsPlaying: !action.game.roundIsPlaying})
+      return Object.assign({}, state, {roundIsPlaying: action.game.roundIsPlaying})
     default:
       return state;
   }
 }
+
 
 export const revealReducer = (state = {}, action) => {
   switch (action.type) {
