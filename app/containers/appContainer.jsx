@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { createGame, createLobby } from '../action-creators.js';
 import App from '../components/App';
 
 const mapStateToProps = (state) => {
@@ -7,15 +6,6 @@ const mapStateToProps = (state) => {
     game: state.game
   }
 }
-const mapDispatchToProps = (game) => {
-  return {
-    creatingGame: () => {
-      dispatch(createGame(game))
-    },
-    creatingLobby: () => {
-      dispatch(createLobby(game))
-    }
-  }
-}
 
-export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
+
+export const AppContainer = connect(mapStateToProps, {})(App);
