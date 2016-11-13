@@ -14,6 +14,13 @@ import {
   START_GAME
 } from '../action-creators.js';
 
+const gameInitialState = {
+    round: 0,
+    gameIsPlaying: false,
+    roundIsPlaying: false,
+    activeLobby: false
+}
+
 
 export const userReducer = (state = [], action) => {
   switch (action.type) {
@@ -28,16 +35,16 @@ export const userReducer = (state = [], action) => {
   }
 }
 
-export const gameReducer = (state = {}, action) => {
+export const gameReducer = (state = gameInitialState, action) => {
   switch (action.type) {
     case CREATE_GAME:
-      return action.game;
+      return Object.assign({}, state, {round: action.game.round})
     case CREATE_LOBBY:
-      return action.game;
+      return Object.assign({}, state, {activeLobby: !action.game.activeLobby} )
     case START_GAME:
-      return action.game;
+      return Object.assign({}, state, {gameIsPlaying: !action.game.gameIsPlaying})
     case START_NEXT_ROUND:
-      return action.game;
+      return Object.assign({}, state, {roundIsPlaying: !action.game.roundIsPlaying})
     default:
       return state;
   }
@@ -48,7 +55,7 @@ export const revealReducer = (state = {}, action) => {
     case COLOR_REVEAL:
       return Object.assign({}, state, {revealColor: action.revealColor});
     case ROLE_REVEAL:
-      return action.revealRole;
+      return Object.assign({}, state, {revealColor: action.revealRole});
     default:
       return state;
   }
