@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
-export default class Toggle extends Component {
+//this.props.currentRoom (to display on slider)
+//onClick(socket.emit --> roomChange)
+
+export default class RoomChangeToggle extends Component {
 
   render() {
     return (

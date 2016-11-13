@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+//updateTime function (socket.on)
+
 export default class Timer extends Component {
 
   render() {

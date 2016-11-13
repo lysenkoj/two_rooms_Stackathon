@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RoundTracker from './RoundTracker';
 import Timer from './Timer';
-import Toggle from './Toggle';
+import RoomChangeToggle from './RoomChangeToggle';
 import RevealButtons from './RevealButtons'
 
 export default class MainLeader extends Component {
@@ -11,7 +11,7 @@ export default class MainLeader extends Component {
       <div className='outer'>
         <Timer />
         <RoundTracker />
-        <Toggle/>
+        <RoomChangeToggle/>
         <div className="filler">
           <button id="leaderInfo" type="button">Leader info</button>
         </div>

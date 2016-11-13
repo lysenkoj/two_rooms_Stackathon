@@ -3,6 +3,7 @@ import RevealButtons from './RevealButtons';
 import Timer from './Timer';
 
 
+
 export default class RoleRevealRed extends Component {
 
   render() {

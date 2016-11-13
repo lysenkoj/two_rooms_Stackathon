@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RoundTracker from './RoundTracker';
 import Timer from './Timer';
-import Toggle from './Toggle';
+import RoomChangeToggle from './RoomChangeToggle';
 
 export default class MainInbetweenNonLeader extends Component {
 
@@ -12,7 +12,7 @@ export default class MainInbetweenNonLeader extends Component {
         <RoundTracker />
         <div id="roomAssign" className="filler">
           <h1>ROOM</h1>
-          <Toggle/>
+          <RoomChangeToggle/>
         </div>
       </div>
     );
