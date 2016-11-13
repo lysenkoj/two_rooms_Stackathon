@@ -77,12 +77,7 @@ const gameLogic = {
         this.stop();
         gameLogic.round--;
         if(gameLogic.round > 0){
-          console.log(io)
-          io.sockets.on('connection', function(socket){
-            socket.on('leaderToggle', function(){
-              gameLogic.roundTimer.start();
-              })
-          })
+          return;
         }else{
           let presidentRoom;
           let bomberRoom;
@@ -115,26 +110,7 @@ const gameLogic = {
   },
   engine: function() {
     Rooms.sortPlayers();
-    gameLogic.prepTimer.start();
   }
 }
 
-module.exports = {
-  io: io,
-  gameLogic: gameLogic,
-  Rooms: Rooms
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+gameLogic.engine()

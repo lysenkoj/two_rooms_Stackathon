@@ -4,11 +4,11 @@ import React, { Component } from 'react';
 // console.log("PLAYERS CURRENTLY SOCKETING", currentSocketPlayers);
 // console.log(socket);
 
-socket.on('hostGameStart', function(data){
-    console.log("DATA received by join game: ", data);
-    // console.log("THESE ARE THE CURRENT PLAYERS: ", currentPlayers);
-    // currentSocketPlayers.push(data)
-})
+// socket.on('hostGameStart', function(data){
+//     console.log("DATA received by join game: ", data);
+//     // console.log("THESE ARE THE CURRENT PLAYERS: ", currentPlayers);
+//     // currentSocketPlayers.push(data)
+// })
 
 export default class JoinGame extends Component {
     constructor(props) {
@@ -58,7 +58,7 @@ export default class JoinGame extends Component {
 }
 
 
-// 
+//
 // <form id="joinGameInput" onSubmit={this.handleSubmit}>
 //     Enter a Custom UserName:
 //     <br></br>

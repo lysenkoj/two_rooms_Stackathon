@@ -5,9 +5,11 @@ const bodyParser = require('body-parser')
 const {resolve} = require('path')
 const path = require('path');
 const { currentPlayers } = require('./players.js');
-
+HEAD
 const currentSocketPlayers = [];
 // module.exports = {currentSocketPlayers: currentSocketPlayers};
+=======
+>>>>>>> master
 
 // Bones has a symlink from node_modules/APP to the root of the app.
 // That means that we can require paths relative to the app root by
@@ -23,23 +25,28 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
-    // 
-    // socket.on('hostGameStart', function(data){
-    //     // console.log("Data from start.js: ", data);
-    //     // console.log("THESE ARE THE CURRENT PLAYERS: ", currentPlayers);
-    //     currentSocketPlayers.push(data)
-    //     //
-    //     console.log("PLAYERS CURRENTLY SOCKETING", (currentSocketPlayers));
-    //
-    //
-    // })
 
-    socket.on('leaderToggle', function(){
-      console.log("RECEIVED DATA!")
+    socket.on('hostGameStart', function(data){
+        // console.log("Data from start.js: ", data);
+        // console.log("THESE ARE THE CURRENT PLAYERS: ", currentPlayers);
+        currentSocketPlayers.push(data)
+        //
+        console.log("PLAYERS CURRENTLY SOCKETING", (currentSocketPlayers));
+
+
     })
-    socket.on('startGame', function(){
+
+
+
+  socket.on('startGame', function(){
       gameLogic.engine()
-    })
+  })
+
+  socket.on('nextRound', function(){
+    gameLogic.roundTimer.start();
+  })
+
+
     socket.on('disconnect', function(){
         console.log("Jack, I'll never let go...");
     })
@@ -165,35 +172,6 @@ const gameLogic = {
         gameLogic.roundToggle = false;
         this.stop();
         gameLogic.round--;
-        if(gameLogic.round > 0){
-          io.sockets.on('connection', function(socket){
-            socket.on('nextRound', function(){
-              gameLogic.roundTimer.start();
-              })
-          })
-        }else{
-          let presidentRoom;
-          let bomberRoom;
-          Rooms.roomA.forEach(player => {
-            if(player.role.name === "President"){
-              presidentRoom = "A";
-            }else{
-              presidentRoom = "B";
-            }
-          })
-          Rooms.roomA.forEach(player => {
-            if(player.role.name === "Bomber"){
-              bomberRoom = "A";
-            }else{
-              bomberRoom = "B";
-            }
-          })
-          if(presidentRoom !== bomberRoom){
-            console.log("BLUE TEAM WINS!");
-          }else{
-            console.log("RED TEAM WINS!");
-          }
-        }
       }
     },
     stop: function() {
