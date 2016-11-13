@@ -12,8 +12,10 @@ const mapDispatchToProps = (dispatch) => {
     startingRound: (game) => {
       dispatch(startRound(game))
     const socket = io()
-    socket.emit('nextRound', ()=>{
-      console.log("EMIT FORM FRONT END")
+    socket.on('connect',()=>{
+      socket.emit('nextRound', ()=>{
+        console.log("EMIT FORM FRONT END")
+      })
     })
     }
   }
