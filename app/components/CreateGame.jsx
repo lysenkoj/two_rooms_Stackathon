@@ -42,10 +42,9 @@ export default class CreateGame extends Component {
         if(this.state.gameId === null){
             alert("Please Create New Game ID")
         } else {
-            console.log("Sending Host SHIT: ", this.state)
-            socket.emit('hostGameStart', function () {
-                return this.state
-            });
+            // console.log("Sending Host SHIT: ", this.state)
+            let playerData = this.state
+            socket.emit('hostGameStart', playerData);
         }
     }
 
@@ -59,7 +58,7 @@ export default class CreateGame extends Component {
                 </div>
 
 
-                <form onSubmit={this.handleSubmit}>
+                <form id="hostUsernameInput" onSubmit={this.handleSubmit}>
                     Enter a Custom UserName:
                     <br></br>
                     <input type="text" value={this.state.value} onChange={this.handleChange} />

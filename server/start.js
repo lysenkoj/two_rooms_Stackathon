@@ -20,18 +20,25 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
-  socket.on('leaderToggle', function(){
+
+    socket.on('hostGameStart', function(data){
+        console.log("Data from start.js: ", data);
+        console.log("THESE ARE THE CURRENT PLAYERS: ", currentPlayers);
+        //need to add the relevant info from the FE onto the array of players
+    })
+
+    socket.on('leaderToggle', function(){
       console.log("RECEIVED DATA!")
-  })
-  socket.on('startGame', function(){
+    })
+    socket.on('startGame', function(){
       gameLogic.engine()
-  })
+    })
     socket.on('disconnect', function(){
         console.log("Jack, I'll never let go...");
     })
-  console.log('A new client has connected!');
-  console.log(socket.id);
-  
+    console.log('A new client has connected!');
+console.log(socket.id);
+
 });
 
 app.get('/', function (req, res) {
