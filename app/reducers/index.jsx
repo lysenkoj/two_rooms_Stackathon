@@ -18,7 +18,8 @@ const gameInitialState = {
     round: 0,
     gameIsPlaying: false,
     roundIsPlaying: false,
-    activeLobby: false
+    activeLobby: false,
+    socket: io()
 }
 
 
@@ -40,7 +41,6 @@ export const gameReducer = (state = gameInitialState, action) => {
     case CREATE_GAME:
       return Object.assign({}, state, {round: action.game.round})
     case CREATE_LOBBY:
-      console.log("CREATE LOBBY",action.game)
       return Object.assign({}, state, {activeLobby: action.game.activeLobby} )
     case START_GAME:
       return Object.assign({}, state, {gameIsPlaying: action.game.gameIsPlaying})
