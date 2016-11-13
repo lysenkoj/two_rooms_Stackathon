@@ -5,11 +5,9 @@ const bodyParser = require('body-parser')
 const {resolve} = require('path')
 const path = require('path');
 const { currentPlayers } = require('./players.js');
-HEAD
+
 const currentSocketPlayers = [];
-// module.exports = {currentSocketPlayers: currentSocketPlayers};
-=======
->>>>>>> master
+
 
 // Bones has a symlink from node_modules/APP to the root of the app.
 // That means that we can require paths relative to the app root by
