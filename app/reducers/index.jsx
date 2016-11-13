@@ -1,7 +1,85 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
+import {
+  JOIN_GAME,
+  CREATE_GAME,
+  JOIN_LOBBY,
+  CREATE_LOBBY,
+  COLOR_REVEAL,
+  ROLE_REVEAL,
+  START_NEXT_ROUND,
+  SELECT_ROOM,
+  DISPLAY_LEADER_INFO,
+  SELECT_LEADER,
+  CALL_FOR_NEW_LEADER,
+  START_GAME
+} from '../action-creators.js';
+
+
+export const userReducer = (state = [], action) => {
+  switch (action.type) {
+    case JOIN_GAME:
+      return action.user;
+    case JOIN_LOBBY:
+      return action.user;
+    case SELECT_LEADER:
+      return action.user;
+    default:
+      return state;
+  }
+}
+
+export const gameReducer = (state = {}, action) => {
+  switch (action.type) {
+    case CREATE_GAME:
+      return action.game;
+    case CREATE_LOBBY:
+      return action.game;
+    case START_GAME:
+      return action.game;
+    case START_NEXT_ROUND:
+      return action.game;
+    default:
+      return state;
+  }
+}
+
+export const revealReducer = (state = {}, action) => {
+  switch (action.type) {
+    case COLOR_REVEAL:
+      return Object.assign({}, state, {revealColor: action.revealColor});
+    case ROLE_REVEAL:
+      return action.revealRole;
+    default:
+      return state;
+  }
+}
+
+export const displayLeaderReducer = (state = false, action) => {
+  switch (action.type) {
+    case DISPLAY_LEADER_INFO:
+      return action.leaderInfo
+    default:
+      return state;
+  }
+}
+
+export const callForNewLeaderReducer = (state = false, action) => {
+  switch (action.type) {
+    case CALL_FOR_NEW_LEADER:
+      return action.newLeader
+    default:
+      return state;
+  }
+}
+
+
 
 const rootReducer = combineReducers({
-  auth: require('./auth').default,  
+  users: userReducer,
+  game: gameReducer,
+  revealer: revealReducer,
+  leaderInfo: displayLeaderReducer,
+  callForNewLeader: callForNewLeaderReducer
 })
 
 export default rootReducer
