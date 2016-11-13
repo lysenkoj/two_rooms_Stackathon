@@ -72,10 +72,9 @@ ColorRevealMarks() {
         <button onMouseDown={this.roleReveal} onMouseUp={this.endReveal} type="button" className="RevealButton" id="btn2" >
             <img className="revealButton" src="stylesheets/button.svg" />
         </button>
-        {
-          this.state.revealColor ?
-          <QuestionMarks/>: null
-        }
+
+          <QuestionMarks/>
+
       </div>
     );
   }

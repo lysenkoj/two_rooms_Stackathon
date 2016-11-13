@@ -10,9 +10,17 @@ export default class Vote extends Component {
         <Timer />
         <RoundTracker />
         <div id="startRound" className="filler">
-          <button type="button"></button>
+          <button type="button" ></button>
         </div>
       </div>
     );
   }
 }
+
+// const mapDispatchToProps = (dispatch, ownProps) => {
+//   return {
+//     dispatch1: () =>{
+//       dispatch(actionCreator)
+//     }
+//   }
+// }

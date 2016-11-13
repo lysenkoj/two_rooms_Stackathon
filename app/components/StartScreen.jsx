@@ -16,13 +16,7 @@ export default class StartScreen extends Component {
   render() {
     return (
       <div className='outer'>
-      {
-        this.state.mainPage?
-        <button onClick={this.startGame}type="button">START</button>:
-        <inbetweenLeader />
-
-      }
-
+        <button onClick={this.startGame}type="button">START</button>
       </div>
     );
   }
