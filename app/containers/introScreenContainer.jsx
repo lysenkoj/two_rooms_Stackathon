@@ -9,9 +9,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    creatingLobby: (game) => {
+    creatingLobby: (game, socket) => {
       dispatch(createLobby(game))
-      const socket = io()
       socket.emit('startGame', function () {
       });
     }

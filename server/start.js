@@ -6,6 +6,7 @@ const {resolve} = require('path')
 const path = require('path');
 const { currentPlayers } = require('./players.js');
 
+
 // Bones has a symlink from node_modules/APP to the root of the app.
 // That means that we can require paths relative to the app root by
 // saying require('APP/whatever').
@@ -20,12 +21,15 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
-  socket.on('leaderToggle', function(){
-      console.log("RECEIVED DATA!")
-  })
   socket.on('startGame', function(){
       gameLogic.engine()
   })
+
+  socket.on('nextRound', function(){
+    gameLogic.roundTimer.start();
+  })
+
+
     socket.on('disconnect', function(){
         console.log("Jack, I'll never let go...");
     })
@@ -150,35 +154,6 @@ const gameLogic = {
         gameLogic.roundToggle = false;
         this.stop();
         gameLogic.round--;
-        if(gameLogic.round > 0){
-          io.sockets.on('connection', function(socket){
-            socket.on('nextRound', function(){
-              gameLogic.roundTimer.start();
-              })
-          })
-        }else{
-          let presidentRoom;
-          let bomberRoom;
-          Rooms.roomA.forEach(player => {
-            if(player.role.name === "President"){
-              presidentRoom = "A";
-            }else{
-              presidentRoom = "B";
-            }
-          })
-          Rooms.roomA.forEach(player => {
-            if(player.role.name === "Bomber"){
-              bomberRoom = "A";
-            }else{
-              bomberRoom = "B";
-            }
-          })
-          if(presidentRoom !== bomberRoom){
-            console.log("BLUE TEAM WINS!");
-          }else{
-            console.log("RED TEAM WINS!");
-          }
-        }
       }
     },
     stop: function() {

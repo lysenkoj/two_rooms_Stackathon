@@ -14,7 +14,7 @@ export default class MainInbetweenLeader extends Component {
         <RoundTracker />
         <div id="startRound" className="filler">
           <h1>ROUND 2</h1>
-          <button onClick={()=>{this.props.startingRound({roundIsPlaying: true})
+          <button onClick={()=>{this.props.startingRound({roundIsPlaying: true}, this.props.game.socket)
       }
         } type="button">START</button>
         </div>
