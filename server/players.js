@@ -1,20 +1,5 @@
 const usersFromLobby = [ "Jordan", "Matt", "Kenneth", "Jackson", "Franklyn", "Katy" ]
 
-
-// const server = require('http').Server(app);
-//
-// const io = require('socket.io')(server);
-//
-// io.on('connection', function (socket) {
-//     socket.on('hostGameStart', function(data){
-//         console.log("gon into the player.js file")
-//         data;
-//     })
-//
-// });
-
-
-
 const { fullRolesArray, testingRolesArray } = require('./roles.js')
 
 const currentPlayers = []

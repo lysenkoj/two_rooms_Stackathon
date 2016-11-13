@@ -7,7 +7,7 @@ export default class CreateGame extends Component {
 
 
         this.state = {
-            value: 'defaultHost1',
+            usernameEntered: 'defaultHost1',
             gameId: null,
             isHost: true,
             socketId: socket.id
@@ -30,11 +30,11 @@ export default class CreateGame extends Component {
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({usernameEntered: event.target.value});
     }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
+        alert('A name was submitted: ' + this.state.usernameEntered);
         event.preventDefault();
     }
 
@@ -42,8 +42,8 @@ export default class CreateGame extends Component {
         if(this.state.gameId === null){
             alert("Please Create New Game ID")
         } else {
-            // console.log("Sending Host SHIT: ", this.state)
             let playerData = this.state
+            // console.log("PLAayer data to send ", playerData)
             socket.emit('hostGameStart', playerData);
         }
     }
@@ -54,14 +54,16 @@ export default class CreateGame extends Component {
                 <h1> Lobby Number: # </h1>
                 <div>
                     <button id="createGameIdBtn" onClick={this.generateGameId}> Create New Game ID </button>
-                    <p>{this.state.gameId}</p>
+                    {(this.state.gameId === null) ? <h4>Click Button to Generate Game ID</h4> :
+                    <h4>Your Game ID is: {this.state.gameId}</h4>
+                    }
                 </div>
 
 
                 <form id="hostUsernameInput" onSubmit={this.handleSubmit}>
                     Enter a Custom UserName:
                     <br></br>
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                    <input type="text" value={this.state.usernameEntered} onChange={this.handleChange} />
                     <input type="submit" value="Submit" />
                 </form>
 
