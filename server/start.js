@@ -9,6 +9,8 @@ HEAD
 const currentSocketPlayers = [];
 // module.exports = {currentSocketPlayers: currentSocketPlayers};
 
+const currentSocketPlayers = [];
+
 
 // Bones has a symlink from node_modules/APP to the root of the app.
 // That means that we can require paths relative to the app root by
