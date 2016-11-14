@@ -36,8 +36,6 @@ render (
       <Route path="/MainNonLeader" component={MainNonLeaderScreenContainer} />
       <Route path="/Vote" component={VoteContainer} />
       <Route path="/MainLeader" component={MainLeaderScreenContainer} />
-      <Route path="/Vote" component={VoteContainer} />
-      <Route path="/MainLeader" component={MainLeaderScreenContainer} />
       <Route path="/RedTeam" component={ColorRevealRed} />
       <Route path="/RoleRevealRed" component={RoleRevealRed} />
     </Router>
