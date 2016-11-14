@@ -5,6 +5,9 @@ const bodyParser = require('body-parser')
 const {resolve} = require('path')
 const path = require('path');
 const { currentPlayers } = require('./players.js');
+HEAD
+const currentSocketPlayers = [];
+// module.exports = {currentSocketPlayers: currentSocketPlayers};
 
 
 // Bones has a symlink from node_modules/APP to the root of the app.
@@ -21,6 +24,14 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
+
+    socket.on('hostGameStart', function(data){
+        currentSocketPlayers.push(data)
+        console.log("PLAYERS CURRENTLY SOCKETING", (currentSocketPlayers));
+    })
+
+
+
   socket.on('startGame', function(){
       gameLogic.engine()
   })
@@ -33,8 +44,9 @@ io.on('connection', function (socket) {
     socket.on('disconnect', function(){
         console.log("Jack, I'll never let go...");
     })
-  console.log('A new client has connected!');
-  console.log(socket.id);
+    console.log('A new client has connected!');
+console.log(socket.id);
+
 });
 
 app.get('/', function (req, res) {
