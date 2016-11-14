@@ -23,7 +23,7 @@ const io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
 
-    socket.on('hostGameStart', function(data){
+    socket.on('createdGameLobbyId', function(data){
         console.log("Data from start.js: ", data);
     })
 

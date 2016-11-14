@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { createGame } from '../action-creators.js';
+import { createLobby, createGame } from '../action-creators.js';
 import CreateGame from '../components/CreateGame';
 
 const mapStateToProps = (state) => {
@@ -11,13 +11,11 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    generateGameId: function(){
-        var randomFourNums = []
-        for (var i = 0; i < 4; i++) {
-            randomFourNums.push(Math.floor(Math.random() * 10))
-        }
-        console.log("randomFourNums: ", randomFourNums.join(""));
-    }
+    creatingLobby: (game, socket) => {
+        dispatch(createLobby(game))
+        // console.log("game from create lobby", game);
+        socket.emit('createdGameLobbyId', game);
+    },
     creatingGame: (game) => {
       dispatch(createGame(game))
     }
