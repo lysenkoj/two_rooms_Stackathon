@@ -41,7 +41,7 @@ export const gameReducer = (state = gameInitialState, action) => {
     case CREATE_GAME:
       return Object.assign({}, state, {round: action.game.round})
     case CREATE_LOBBY:
-      return Object.assign({}, state, {activeLobby: action.game.activeLobby} )
+      return Object.assign({}, state, {activeLobby: action.game.activeLobby, lobbyId: action.game.lobbyId} )
     case START_GAME:
       return Object.assign({}, state, {gameIsPlaying: action.game.gameIsPlaying})
     case START_NEXT_ROUND:

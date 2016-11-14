@@ -1,5 +1,43 @@
 import React, { Component } from 'react';
 
+export default class CreateGame extends Component {
+
+    constructor(props) {
+        super(props)
+        this.generateGameId = this.generateGameId.bind(this);
+    }
+
+    generateGameId() {
+        var randomFourNums = []
+        for (var i = 0; i < 4; i++) {
+            randomFourNums.push(Math.floor(Math.random() * 10))
+        }
+        console.log("randomFourNums: ", randomFourNums.join(""));
+        console.log("THIS.PROPS: ", this.props);
+        // return randomFourNums.join("");
+        this.props.gameId = randomFourNums.join("");
+    }
+
+    render() {
+        return (
+            <div className='outer'>
+                <h1> Lobby Number: # </h1>
+                <div>
+                    <button onClick={this.generateGameId} > Create New Game ID </button>
+                </div>
+            </div>
+        );
+    }
+}
+
+
+
+
+
+
+/*
+
+import React, { Component } from 'react';
 
 export default class CreateGame extends Component {
     constructor(props) {
@@ -75,3 +113,6 @@ export default class CreateGame extends Component {
         );
     }
 }
+
+
+*/
