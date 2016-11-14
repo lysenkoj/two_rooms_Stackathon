@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 import RoundTracker from './RoundTracker';
-import Timer from './Timer';
+import {TimerContainer} from '../containers/TimerContainer';
 
 export default class Vote extends Component {
 
   render() {
     return (
-      <div className='outer'>
-        <Timer />
+      <div className='outer gray'>
+        <TimerContainer />
         <RoundTracker />
         <div id="startRound" className="filler">
-          <button type="button" ></button>
+        <Link to="/mainLeader">
+          <button type="button" >BECOME LEADER</button>
+        </Link>
         </div>
       </div>
     );

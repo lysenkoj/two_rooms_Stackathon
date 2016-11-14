@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import App from '../components/App';
+import Timer from '../components/Timer';
 
 const mapStateToProps = (state) => {
   return {
@@ -8,4 +8,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export const AppContainer = connect(mapStateToProps, {})(App);
+export const TimerContainer = connect(mapStateToProps, {})(Timer);

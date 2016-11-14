@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router';
 
-export default class Toggle extends Component {
+export default class RoomToggle extends Component {
 
   render() {
     return (
       <div className='toggle'>
-        <Link to="/Vote">
+        <div>A</div>
         <label className="switch">
           <input type="checkbox"/>
-          <div className="slider">
-              <p>B</p>
-          </div>
+          <div className="slider"/>
         </label>
-        </Link>
+        <div>B</div>
       </div>
     );
   }

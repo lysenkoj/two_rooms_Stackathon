@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RoundTracker from './RoundTracker';
-import Timer from './Timer';
+import {TimerContainer} from '../containers/TimerContainer';
 import Toggle from './Toggle';
 import RevealButtons from './RevealButtons'
 
@@ -8,12 +8,13 @@ export default class MainLeader extends Component {
 
   render() {
     return (
-      <div className='outer'>
-        <Timer />
+      <div className='outer gray'>
+        <TimerContainer />
         <RoundTracker />
         <Toggle/>
         <div className="filler">
-          <button id="leaderInfo" type="button">Leader info</button>
+          <button onClick={()=>this.props.displayingLeaderInfo({leaderInfo: true})}
+          id="leaderInfo" type="button">Leader info</button>
         </div>
         <RevealButtons/>
       </div>

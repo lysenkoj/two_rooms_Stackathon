@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RevealButtons from './RevealButtons';
-import Timer from './Timer';
+import {TimerContainer} from '../containers/TimerContainer';
 
 
 export default class ColorRevealBlue extends Component {
@@ -16,7 +16,7 @@ export default class ColorRevealBlue extends Component {
   render() {
     return (
       <div className='outer blue'>
-        <Timer />
+        <TimerContainer/>
         <div className="filler"/>
         <RevealButtons/>
       </div>

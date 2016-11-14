@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from "react-router";
 import QuestionMarks from './QuestionMarks';
 
 export default class RevealButtons extends Component {
@@ -12,7 +13,7 @@ export default class RevealButtons extends Component {
     this.roleReveal = this.roleReveal.bind(this)
     this.endReveal = this.endReveal.bind(this)
     this.ColorRevealMarks = this.ColorRevealMarks.bind(this)
-    this.pauseElement = this.pauseElement.bind(this)
+    this.cancelAnimation = this.cancelAnimation.bind(this)
 
   }
 
@@ -28,16 +29,18 @@ export default class RevealButtons extends Component {
   endReveal(){
     this.state.revealColor = false;
     this.state.revealRole = false;
-    this.state.animtions=[]
+    this.cancelAnimation()
   }
 
-  pauseElement() {
+  cancelAnimation() {
+    document.getElementsByClassName("qContainer")[0].style.visibility = "hidden";
   this.state.animations.forEach(animation => {
-    animation.pause();
+    animation.cancel();
   })
 }
 
 ColorRevealMarks() {
+  document.getElementsByClassName("qContainer")[0].style.visibility = "visible";
   this.state.animations = [];
   var q = document.querySelectorAll('div.q');
   q = Array.prototype.slice.call(q);
@@ -66,12 +69,16 @@ ColorRevealMarks() {
   render() {
     return (
       <div className='RevealButtonsContainer'>
+      <Link to="/RedTeam">
         <button onMouseDown={this.revealColor} onMouseUp={this.endReveal}type="button" className="RevealButton" id="btn1" >
             <img className="revealButton" src="stylesheets/button.svg" />
         </button>
+      </Link>
+      <Link to="/RoleRevealRed">
         <button onMouseDown={this.roleReveal} onMouseUp={this.endReveal} type="button" className="RevealButton" id="btn2" >
             <img className="revealButton" src="stylesheets/button.svg" />
         </button>
+      </Link>
 
           <QuestionMarks/>
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RoundTracker from './RoundTracker';
-import Timer from './Timer';
+import {TimerContainer} from '../containers/TimerContainer';
 
 export default class MainInbetweenLeader extends Component {
   constructor(){
@@ -9,8 +9,8 @@ export default class MainInbetweenLeader extends Component {
 
   render() {
     return (
-      <div className='outer'>
-        <Timer />
+      <div className='outer gray'>
+        <TimerContainer />
         <RoundTracker />
         <div id="startRound" className="filler">
           <h1>ROUND 2</h1>

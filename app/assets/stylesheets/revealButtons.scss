@@ -16,3 +16,22 @@
     height: 20vh;
     width: 20vh;
 }
+
+#btn1{
+  border: none;
+  background: none;
+}
+
+#btn2{
+  border: none;
+  background: none;
+}
+
+button:focus {
+  outline: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}

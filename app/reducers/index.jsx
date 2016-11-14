@@ -11,7 +11,9 @@ import {
   DISPLAY_LEADER_INFO,
   SELECT_LEADER,
   CALL_FOR_NEW_LEADER,
-  START_GAME
+  START_GAME,
+  SWITCH_ROOM,
+  TIMER_TICK
 } from '../action-creators.js';
 
 const gameInitialState = {
@@ -19,7 +21,8 @@ const gameInitialState = {
     gameIsPlaying: false,
     roundIsPlaying: false,
     activeLobby: false,
-    socket: io()
+    socket: io(),
+    timer: 0
 }
 
 
@@ -30,6 +33,8 @@ export const userReducer = (state = [], action) => {
     case JOIN_LOBBY:
       return action.user;
     case SELECT_LEADER:
+      return action.user;
+    case SWITCH_ROOM:
       return action.user;
     default:
       return state;
@@ -46,6 +51,8 @@ export const gameReducer = (state = gameInitialState, action) => {
       return Object.assign({}, state, {gameIsPlaying: action.game.gameIsPlaying})
     case START_NEXT_ROUND:
       return Object.assign({}, state, {roundIsPlaying: action.game.roundIsPlaying})
+    case TIMER_TICK:
+      return Object.assign({}, state, {currentTimer: action.game.timer})
     default:
       return state;
   }

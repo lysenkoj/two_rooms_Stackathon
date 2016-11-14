@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import RoundTracker from './RoundTracker';
-import Timer from './Timer';
-import Toggle from './Toggle';
+import {TimerContainer} from '../containers/TimerContainer';
+import {RoomToggleContainer} from '../containers/RoomToggleContainer';
 
 export default class MainInbetweenNonLeader extends Component {
 
   render() {
     return (
-      <div className='outer'>
-        <Timer />
+      <div className='outer gray'>
+        <TimerContainer />
         <RoundTracker />
         <div id="roomAssign" className="filler">
           <h1>ROOM</h1>
-          <Toggle/>
+          <RoomToggleContainer />
         </div>
       </div>
     );
