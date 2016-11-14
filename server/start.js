@@ -5,8 +5,7 @@ const bodyParser = require('body-parser')
 const {resolve} = require('path')
 const path = require('path');
 const { currentPlayers } = require('./players.js');
-HEAD
-const currentSocketPlayers = [];
+
 // module.exports = {currentSocketPlayers: currentSocketPlayers};
 
 const currentSocketPlayers = [];
