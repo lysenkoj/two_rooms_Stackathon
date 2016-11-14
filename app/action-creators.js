@@ -10,6 +10,22 @@ export const DISPLAY_LEADER_INFO = "DISPLAY_LEADER_INFO";
 export const SELECT_LEADER = "SELECT_LEADER";
 export const CALL_FOR_NEW_LEADER = "CALL_FOR_NEW_LEADER";
 export const START_GAME = "START_GAME";
+export const SWITCH_ROOM = "SWITCH_ROOM";
+export const TIMER_TICK = "TIMER_TICK";
+
+export const timerTick = game => {
+  return {
+    type: TIMER_TICK,
+    game
+  }
+}
+
+export const switchRoom = user => {
+  return {
+    type: SWITCH_ROOM,
+    user
+  }
+}
 
 export const joinGame = user => {
   return {
@@ -18,7 +34,7 @@ export const joinGame = user => {
   }
 }
 
-export const creatGame = game => {
+export const createGame = game => {
   return {
     type: CREATE_GAME,
     game
