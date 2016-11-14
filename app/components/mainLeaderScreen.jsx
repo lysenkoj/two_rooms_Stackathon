@@ -8,7 +8,7 @@ export default class MainLeader extends Component {
 
   render() {
     return (
-      <div className='outer'>
+      <div className='outer gray'>
         <TimerContainer />
         <RoundTracker />
         <Toggle/>

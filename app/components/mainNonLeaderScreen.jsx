@@ -7,8 +7,9 @@ import RevealButtons from './RevealButtons'
 export default class MainNonLeader extends Component {
 
   render() {
+    console.log(this.props)
     return (
-      <div className='outer'>
+      <div className='outer gray'>
         <TimerContainer />
         <RoundTracker />
         <Toggle/>

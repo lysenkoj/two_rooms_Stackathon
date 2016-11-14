@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router';
 import inbetweenLeader from './mainInbetweenLeader';
 
 export default class StartScreen extends Component {
-  constructor(){
-    super()
-
-    this.startGame = this.startGame.bind(this);
-  }
-  startGame(){
-    socket.emit('startGame', function () {
-    });
-    this.setState({mainPage:false})
-  }
-
   render() {
     return (
-      <div className='outer'>
-        <button onClick={this.startGame}type="button">START</button>
+      <div className='outer gray'>
+      <Link to="/MainNonLeader">
+        <button onClick={()=>{this.props.startingGame({gameIsPlaying: true}, this.props.game.socket)
+      }
+        } type="button">START GAME</button>
+        </Link>
       </div>
     );
   }

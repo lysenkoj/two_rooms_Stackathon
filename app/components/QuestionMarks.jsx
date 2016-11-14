@@ -11,37 +11,37 @@ export default class QuestionMarks extends Component {
     return (
       <div className="qContainer">
         <div className='q'>
-          <img src="stylesheets/blueQuestion.svg"/>
+          <img src="stylesheets/question.svg"/>
         </div>
         <div className='q'>
-          <img src="stylesheets/blueQuestion.svg"/>
+          <img src="stylesheets/question.svg"/>
         </div>
         <div className='q'>
-          <img src="stylesheets/blueQuestion.svg"/>
+          <img src="stylesheets/question.svg"/>
         </div>
         <div className='q'>
-          <img src="stylesheets/blueQuestion.svg"/>
+          <img src="stylesheets/question.svg"/>
         </div>
         <div className='q'>
-          <img src="stylesheets/blueQuestion.svg"/>
+          <img src="stylesheets/question.svg"/>
         </div>
         <div className='q'>
-          <img src="stylesheets/blueQuestion.svg"/>
+          <img src="stylesheets/question.svg"/>
         </div>
         <div className='q'>
-          <img src="stylesheets/blueQuestion.svg"/>
+          <img src="stylesheets/question.svg"/>
         </div>
         <div className='q'>
-          <img src="stylesheets/blueQuestion.svg"/>
+          <img src="stylesheets/question.svg"/>
         </div>
         <div className='q'>
-          <img src="stylesheets/blueQuestion.svg"/>
+          <img src="stylesheets/question.svg"/>
         </div>
         <div className='q'>
-          <img src="stylesheets/blueQuestion.svg"/>
+          <img src="stylesheets/question.svg"/>
         </div>
         <div className='q'>
-          <img src="stylesheets/blueQuestion.svg"/>
+          <img src="stylesheets/question.svg"/>
         </div>
       </div>
     );
