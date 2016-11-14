@@ -34,7 +34,7 @@ export default class CreateGame extends Component {
     }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.usernameEntered645);
+        alert('A name was submitted: ' + this.state.usernameEntered);
         event.preventDefault();
     }
 
