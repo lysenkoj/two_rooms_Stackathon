@@ -15,31 +15,31 @@ import RoleRevealRed from './components/RoleRevealRed';
 import MainInbetweenNonLeader from './components/mainInbetweenNonLeader';
 import MainInbetweenLeader from './components/mainInbetweenLeader';
 import Vote from './components/Vote';
-import StartScreen from './components/StartScreen';
-import JoinGame from './components/JoinGame';
-import CreateGame from './components/CreateGame';
-import IntroScreen from './components/introScreen';
-import {AppContainer} from './containers/appContainer';
+import {VoteContainer} from './containers/VoteContainer';
+import {Main} from './components/JoinGame';
+import {MainInbetweenLeaderContainer} from './containers/mainInbetweenLeaderContainer';
+import {IntroScreenContainer} from './containers/introScreenContainer';
+import {CreateGameContainer} from './containers/createGameContainer';
+import {StartScreenContainer} from './containers/StartScreenContainer';
+import {MainNonLeaderScreenContainer} from './containers/mainNonLeaderScreenContainer';
+import {MainLeaderScreenContainer} from './containers/mainLeaderScreenContainer';
 
 
 
 render (
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={AppContainer} />
-      <Route path="MainNonLeader" component={MainNonLeaderScreen} />
-      <Route path="MainLeader" component={MainLeaderScreen} />
-      <Route path="ColorRevealBlue" component={ColorRevealBlue} />
-      <Route path="ColorRevealRed" component={ColorRevealRed} />
-      <Route path="RoleRevealBlue" component={RoleRevealBlue} />
-      <Route path="RoleRevealRed" component={RoleRevealRed} />
-      <Route path="MainInbetweenNonLeader" component={MainInbetweenNonLeader} />
-      <Route path="MainInbetweenLeader" component={MainInbetweenLeader} />
-      <Route path="Vote" component={Vote}/>
-      <Route path="Start" component={StartScreen}/>
-      <Route path="Join" component={JoinGame}/>
-      <Route path="Create" component={CreateGame}/>
-      <Route path="Intro" component={IntroScreen}/>
+      <Route path="/" component={IntroScreenContainer} />
+      <Route path="/MainInbetweenLeaderContainer" component={MainInbetweenLeaderContainer} />
+      <Route path="/CreateGameContainer" component={CreateGameContainer} />
+      <Route path="/StartScreenContainer" component={StartScreenContainer} />
+      <Route path="/MainNonLeader" component={MainNonLeaderScreenContainer} />
+      <Route path="/Vote" component={VoteContainer} />
+      <Route path="/MainLeader" component={MainLeaderScreenContainer} />
+      <Route path="/Vote" component={VoteContainer} />
+      <Route path="/MainLeader" component={MainLeaderScreenContainer} />
+      <Route path="/RedTeam" component={ColorRevealRed} />
+      <Route path="/RoleRevealRed" component={RoleRevealRed} />
     </Router>
   </Provider>,
   document.getElementById('main')

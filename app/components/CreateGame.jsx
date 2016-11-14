@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {Link} from 'react-router';
 
 export default class CreateGame extends Component {
     constructor(props) {
@@ -10,7 +10,7 @@ export default class CreateGame extends Component {
             usernameEntered: 'defaultHost1',
             gameId: null,
             isHost: true,
-            socketId: socket.id
+            socketId: "socket.id"
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,7 +34,7 @@ export default class CreateGame extends Component {
     }
 
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.usernameEntered6:45);
+        alert('A name was submitted: ' + this.state.usernameEntered645);
         event.preventDefault();
     }
 
@@ -44,13 +44,13 @@ export default class CreateGame extends Component {
         } else {
             let playerData = this.state
             // console.log("PLAayer data to send ", playerData)
-            socket.emit('hostGameStart', playerData);
+            // socket.emit('hostGameStart', playerData);
         }
     }
 
     render() {
         return (
-            <div className='outer'>
+            <div className='outer gray'>
                 <h1> Lobby Number: # </h1>
                 <div>
                     <button id="createGameIdBtn" onClick={this.generateGameId}> Create New Game ID </button>
@@ -67,7 +67,9 @@ export default class CreateGame extends Component {
                     <input type="submit" value="Submit" />
                 </form>
                 <div>
+                  <Link to="/StartScreenContainer">
                     <button onClick={this.emitSocket} id="startGameBtn"> START GAME </button>
+                  </Link>
                 </div>
             </div>
         );

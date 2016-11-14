@@ -9,10 +9,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    creatingLobby: (game, socket) => {
+    creatingLobby: (game) => {
       dispatch(createLobby(game))
-      socket.emit('startGame', function () {
-      });
     }
   }
 }

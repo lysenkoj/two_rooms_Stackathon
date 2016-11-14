@@ -9,7 +9,7 @@ export default class MainInbetweenLeader extends Component {
 
   render() {
     return (
-      <div className='outer'>
+      <div className='outer gray'>
         <TimerContainer />
         <RoundTracker />
         <div id="startRound" className="filler">

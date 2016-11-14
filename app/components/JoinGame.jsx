@@ -18,9 +18,8 @@ export default class JoinGame extends Component {
             usernameEntered: 'user1',
             gameId: null,
             isHost: false,
-            socketId: socket.id
+            socketId: this.props
         };
-
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -37,7 +36,7 @@ export default class JoinGame extends Component {
 
     render() {
         return (
-            <div className='outer'>
+            <div className='outer gray'>
                 <h1> JOIN A GAME YOU FOOL </h1>
 
                 <h3>Enter The Game ID You Would Like To Join</h3>

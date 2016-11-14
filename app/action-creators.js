@@ -55,7 +55,7 @@ export const createLobby = game => {
   }
 }
 
-export const colorReveal = color => {
+export const colorReveal = revealColor => {
   return {
     type: COLOR_REVEAL,
     revealColor
@@ -104,10 +104,10 @@ export const callForNewLeader = newLeader => {
   }
 }
 
-export const startGame = newGame => {
+export const startGame = game => {
   return {
     type: START_GAME,
-    newGame
+    game
   }
 }
 

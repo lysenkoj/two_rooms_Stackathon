@@ -38,7 +38,31 @@ io.on('connection', function (socket) {
   })
 
   socket.on('nextRound', function(){
-    gameLogic.roundTimer.start();
+    if(gameLogic.round > 0){
+      gameLogic.roundTimer.start();
+    }else{
+      let presidentRoom;
+      let bomberRoom;
+      Rooms.roomA.forEach(player => {
+        if(player.role.name === "President"){
+          presidentRoom = "A";
+        }else{
+          presidentRoom = "B";
+        }
+      })
+      Rooms.roomA.forEach(player => {
+        if(player.role.name === "Bomber"){
+          bomberRoom = "A";
+        }else{
+          bomberRoom = "B";
+        }
+      })
+      if(presidentRoom !== bomberRoom){
+        console.log("BLUE TEAM WINS!");
+      }else{
+        console.log("RED TEAM WINS!");
+      }
+    }
   })
 
 

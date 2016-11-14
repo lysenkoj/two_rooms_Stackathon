@@ -7,7 +7,7 @@ export default class MainInbetweenNonLeader extends Component {
 
   render() {
     return (
-      <div className='outer'>
+      <div className='outer gray'>
         <TimerContainer />
         <RoundTracker />
         <div id="roomAssign" className="filler">

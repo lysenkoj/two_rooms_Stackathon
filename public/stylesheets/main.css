@@ -1,7 +1,15 @@
 body {
+  -webkit-touch-callout: none !important;
   margin: 0;
   height: 100vh;
   width: 100vw; }
+
+a {
+  -webkit-user-select: none !important; }
+
+img {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important; }
 
 .timer {
   display: flex;
@@ -10,12 +18,17 @@ body {
   align-items: center;
   height: 20vh;
   width: 100vw;
-  margin-bottom: 2vh; }
+  margin-bottom: 2vh;
+  background-color: white; }
 
 .timebox {
   height: 100%;
   width: 25%;
   border: 1px solid black; }
+
+.numbers {
+  width: 100%;
+  height: 100%; }
 
 .outer {
   display: flex;
@@ -128,6 +141,22 @@ input:checked + .slider:before {
   height: 20vh;
   width: 20vh; }
 
+#btn1 {
+  border: none;
+  background: none; }
+
+#btn2 {
+  border: none;
+  background: none; }
+
+button:focus {
+  outline: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
+
 #leaderInfo {
   width: 10vw;
   height: 15vh;
@@ -148,13 +177,21 @@ input:checked + .slider:before {
   -o-background-size: cover;
   background-size: cover; }
 
+.gray {
+  background: url(mainBackground.svg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
 .qContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   position: absolute;
   width: 0;
-  height: 0; }
+  height: 0;
+  visibility: hidden; }
 
 #nonHostUsernameInput {
   width: 20vw;

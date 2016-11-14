@@ -1,3 +1,4 @@
+import { connect } from 'react-redux';
 import { startRound } from '../action-creators.js';
 import MainLeaderScreen from '../components/mainLeaderScreen';
 
