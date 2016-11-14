@@ -20,7 +20,7 @@ const gameInitialState = {
     round: 0,
     gameIsPlaying: false,
     roundIsPlaying: false,
-    activeLobby: false,
+    lobbyId: 0,
     socket: io(),
     timer: 0
 }
@@ -42,11 +42,13 @@ export const userReducer = (state = [], action) => {
 }
 
 export const gameReducer = (state = gameInitialState, action) => {
-  switch (action.type) {
+    console.log("ACTION TYPE: ", action.type);
+    switch (action.type) {
     case CREATE_GAME:
       return Object.assign({}, state, {round: action.game.round})
     case CREATE_LOBBY:
-      return Object.assign({}, state, {activeLobby: action.game.activeLobby} )
+    console.log("GOT INTO CREATE LOBBY");
+      return Object.assign({}, state, {lobbyId: action.game.lobbyId} )
     case START_GAME:
       return Object.assign({}, state, {gameIsPlaying: action.game.gameIsPlaying})
     case START_NEXT_ROUND:

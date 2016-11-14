@@ -6,9 +6,6 @@ const {resolve} = require('path')
 const path = require('path');
 const { currentPlayers } = require('./players.js');
 
-// module.exports = {currentSocketPlayers: currentSocketPlayers};
-
-const currentSocketPlayers = [];
 
 
 // Bones has a symlink from node_modules/APP to the root of the app.
@@ -26,9 +23,8 @@ const io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
 
-    socket.on('hostGameStart', function(data){
-        currentSocketPlayers.push(data)
-        console.log("PLAYERS CURRENTLY SOCKETING", (currentSocketPlayers));
+    socket.on('createdGameLobbyId', function(data){
+        console.log("Data from start.js: ", data);
     })
 
 
