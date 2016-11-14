@@ -66,11 +66,9 @@ export default class CreateGame extends Component {
                     <input type="text" value={this.state.usernameEntered} onChange={this.handleChange} />
                     <input type="submit" value="Submit" />
                 </form>
-
                 <div>
                     <button onClick={this.emitSocket} id="startGameBtn"> START GAME </button>
                 </div>
-
             </div>
         );
     }
