@@ -6,6 +6,8 @@ const {resolve} = require('path')
 const path = require('path');
 const { currentPlayers } = require('./players.js');
 
+const currentSocketPlayers = [];
+
 
 // Bones has a symlink from node_modules/APP to the root of the app.
 // That means that we can require paths relative to the app root by
@@ -21,6 +23,19 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
+
+    socket.on('hostGameStart', function(data){
+        // console.log("Data from start.js: ", data);
+        // console.log("THESE ARE THE CURRENT PLAYERS: ", currentPlayers);
+        currentSocketPlayers.push(data)
+        //
+        console.log("PLAYERS CURRENTLY SOCKETING", (currentSocketPlayers));
+
+
+    })
+
+
+
   socket.on('startGame', function(){
       gameLogic.engine()
   })
@@ -33,8 +48,9 @@ io.on('connection', function (socket) {
     socket.on('disconnect', function(){
         console.log("Jack, I'll never let go...");
     })
-  console.log('A new client has connected!');
-  console.log(socket.id);
+    console.log('A new client has connected!');
+console.log(socket.id);
+
 });
 
 app.get('/', function (req, res) {
